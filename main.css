@@ -1,33 +1,9 @@
-/* 移动设备媒体查询 */
-@media screen and (max-width: 767px) {
-  /* 在宽度小于767像素时应用以下样式 */
-  body {
-    font-size: 14px;
-  }
-
-  /* 更改侧边栏宽度和字体大小 */
-  .sidebar {
-    width: 100%;
-  }
-  .sidebar h2 {
-    font-size: 20px;
-  }
-
-  /* 改变卡片宽度和字体大小 */
-  .card {
-    width: 120%;
-  }
-  .card h3 {
-    font-size: 18px;
-  }
-}
-
 /* 通用样式 */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family:DotGothic16, Arial, sans-serif;
+    font-family: 'DotGothic16', Arial, sans-serif;
 }
 
 /* 页面主体样式 */
@@ -35,212 +11,73 @@ body {
     background-color: #008080; /* 青色背景 */
 }
 
-/*p自动换行*/
-p { word-wrap:break-word; }
-
 /* 卡片样式 */
 .card {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150%;
-    height: 150%;
-    padding: 1 rem;
     background-color: #c0c0c0; /* 灰色卡片界面 */
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    display: none; /* 初始状态下隐藏卡片 */
-    overflow: scroll;
-    max-width: 20 rem;
-    max-height: 20 rem;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
 }
 
-.card.active {
-    display: block; /* 卡片激活时显示 */
+.card h1,
+.card h2,
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
+.card p {
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
-::-webkit-scrollbar-track {
-  background-color: #f5f5f5;
+.card img {
+    max-width: 1000px; /* 图片最大宽度为1000px */
+    height: auto; /* 保持图片比例 */
+    display: block; /* 防止图片之间出现空隙 */
+    margin-bottom: 10px;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #aaa;
-  border-radius: 5px;
+/* Win95 风格 */
+.win95-box {
+    border: 1px solid #000;
+    background-color: #c0c0c0;
+    padding: 10px;
+    margin: 20px;
 }
 
-
-#copyright{
-    position: absolute;
-    bottom: 0;
-    font-size:12px;
-    text-align: center;
-}
-
-.btn-top {
-  position: sticky;
-  bottom: 10px;
-  right: 100px;
-  background-color: #fff;
-  border: none;
-  color: #000;
-  padding: 10px;
-  cursor: pointer;
-}
-
-#books, #movies{
-    width:800px;
-    height:650px;
-}
-/*win95风格编写*/
-/*.win95-box {
-  background-color: #c0c0c0;
-  padding: 16px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
-}
-
-.win95-box::before, .win95-box::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 8px;
-}
-
-.win95-box::before {
-  background-color: #ffffff;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
-}
-
-.win95-box::after {
-  background-color: #000000;
-  opacity: 0.4;
-  z-index: -1;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
-}*/
-
-
-/* 导航栏样式 */
+/* 导航栏 */
 .sidebar {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    width: 100px;
-    height: auto;
-    background-color: #c0c0c0; /* 灰色导航栏界面 */
+    background-color: #c0c0c0; /* 灰色背景 */
     border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    overflow: hidden;
+    padding: 10px;
+    margin: 20px;
 }
 
 .nav-button {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: transparent;
+    margin-bottom: 10px;
     border: none;
-    border-bottom: 1px solid #808080; /* 灰色分割线 */
-    font-size: 16px;
-    color: #000000;
-    cursor: pointer;
-}
-
-.nav-button:hover {
-    background-color: #808080; /* 鼠标悬停时背景变为灰色 */
-    color: #ffffff; /* 鼠标悬停时字体变为白色 */
-}
-
-/* 月历打卡表样式 */
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #808080; /* 灰色边框 */
+    background-color: #008080; /* 青色按钮 */
+    color: #fff;
     text-align: center;
-    font-size: 16px;
-    padding: 10px;
+    border-radius: 5px;
 }
 
-thead {
-    background-color: #c0c0c0; /* 灰色表头背景 */
-}
-
-td.disabled {
-    background-color: #d3d3d3; /* 禁用日期背景 */
-    color: #808080; /* 禁用日期文字颜色 */
-}
-
-/* 关闭按钮样式 */
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    background-color: #ff0000; /* 红色关闭按钮 */
-    border-radius: 50%;
-    cursor: pointer;
-    text-align: center;
-    line-height: 20px;
-    color: #ffffff;
-    font-size: 14
-}
-.card {
-  width: 300px;
-  height: 400px;
-  background-color: #808080;
-  border: 3px solid #808080;
-}
-
-.book-list, .movie-list{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 自适应网格布局 */
-  grid-gap: 20px;
-}
-
-.book-item, .movie-item{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 10px;
-  background-color: #f0f0f0;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-  overflow: auto;
-}
-
-.book-item img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-.movie-item img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-.book-title, .movie-title{
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.book-author,
-.book-publisher,
-.book-rating,
-.book-description {
-  font-size: 1rem;
-  margin: 5px 0;
+/* 媒体查询 - 适配移动端 */
+@media screen and (max-width: 600px) {
+    .card,
+    .sidebar {
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+    }
 }
